@@ -1,0 +1,324 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+RNASeq Data Analysis through MATLAB 
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Verse
+Version 1.1
+\end_layout
+
+\begin_layout Address
+jsalvi@rockefeller.edu
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Section
+RNASeq-RNASeq Retrieval
+\end_layout
+
+\begin_layout Standard
+The first script (rnaseqretrieval.m) attempts to retrieve data from multiple
+ RNASeq sources in order to find common values between sets of RNASeq data.
+ The script is meant to be compatible with numerous sources, and preprocessing
+ of data is required.
+\end_layout
+
+\begin_layout Subsection
+Preprocessing of RNASeq Data
+\end_layout
+
+\begin_layout Standard
+Data from RNASeq can be processed in numerous ways.
+ However, once the sheets are prepared, the script will only process them
+ if the tables are formatted correctly.
+ Prepare them in the following manner:
+\end_layout
+
+\begin_layout Itemize
+Ensure that the final column in the spreadsheet is numerical.
+ I recommend padding this last column with zeros in order to prevent the
+ script from eliminating critical data.
+\end_layout
+
+\begin_layout Itemize
+The spreadsheet must be saved in as a Windows-formatted text file (.txt),
+ delimited by tabs ('/t').
+ Do not save the data in Unicode format; the script will not recognize it.
+ If you wish to use comma-separated value formats, the script is less predictabl
+e.
+\end_layout
+
+\begin_layout Itemize
+Ensure that the number of nonzero rows is the same in each column.
+ An improper shape to the matrix will result in a vertcat error.
+\end_layout
+
+\begin_layout Subsection
+Data Import
+\end_layout
+
+\begin_layout Standard
+The first part of the MATLAB script imports the data from user input:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../figs/112.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this script, the user will first be presented with a series of warnings
+ describing the preprocessing required in Section 1.1.
+ The user will then be asked whether RNA Seq 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Reference
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ data are available.
+ This is the first sheet to be compared, but it is not the one that will
+ be used to create the output matrix.
+ If 'y' is the user's input, the user will then be asked for the directory
+ and filename for the data (e.g.
+ /Users/Admin/Documents/data1.txt in UNIX).
+ The same will be done for any microarray data, but ignore this for the
+ moment.
+\end_layout
+
+\begin_layout Standard
+The user will then be prompted for the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Retrieval
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ sheet, which is the second RNA Seq data sheet to be compared.
+ This is the sheet that will be used to created the output matrix upon completio
+n.
+ In other words, selected genes will be populated with data from this sheet
+ in a new matrix.
+\end_layout
+
+\begin_layout Standard
+Finally, the user will be asked if default settings are to be used.
+ The default is to assume that the gene name for comparison is found in
+ the 
+\series bold
+third
+\series default
+ column of each matrix.
+ If this is not true for any of the files imported, select 'n' and input
+ the proper column number.
+\end_layout
+
+\begin_layout Subsection
+Data Intersection
+\end_layout
+
+\begin_layout Standard
+This is the script's engine.
+ For each of the sheets imported (up to three in this version), all of the
+ cells of the given matrix are compared with one another with MATLAB's 
+\begin_inset Formula $intersect$
+\end_inset
+
+ function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../figs/2121.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function will output three arrays for each comparison.
+ The first of these arrays, 
+\begin_inset Quotes eld
+\end_inset
+
+_Intersect
+\begin_inset Quotes erd
+\end_inset
+
+, contains all values in common between the two matrices and will not be
+ used.
+ It is the index array for each matrix (e.g.
+ SRefI, SRetI) that will be used.
+ Depending upon the column where gene names are located, the 1D index array
+ will be converted to the index for the 2D matrix for the data of interest.
+ This will correspond to the 
+\series bold
+row
+\series default
+ of the 
+\series bold
+gene in common
+\series default
+ between the two matrices.
+ Any extraneous indices are removed.
+ For each of the gene row indices, the entire row is pulled from the retrieval
+ matrix and added to a growing 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Common
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ matrix.
+ 
+\end_layout
+
+\begin_layout Standard
+After population of the common matrix by the script's engine, the user will
+ be prompted to save the 
+\series bold
+.mat
+\series default
+ file for future use.
+ These files can then be opened in MATLAB and data from them can be sent
+ to additional programs such as R64, SPSS, or Excel.
+ 
+\end_layout
+
+\begin_layout Subsection
+Troubleshooting
+\end_layout
+
+\begin_layout Standard
+One problem with the script is that all cells are converted to strings upon
+ import to MATLAB.
+ If this becomes problematic, another option would be to use 
+\begin_inset Formula $xlsread$
+\end_inset
+
+ to pull strings and numerical data from the original .xls file (not .xlsx).
+ Since the indices will be known from the SRetRow and ARetRow arrays, the
+ same 
+\begin_inset Formula $for$
+\end_inset
+
+ loop used in the script above can be applied to the numerical matrix read
+ from Excel.
+ 
+\end_layout
+
+\begin_layout Standard
+Another issue is that the last column in every matrix is deleted upon import.
+ This is due to the fact that the final numerical column will not be included
+ in the textdata (string) matrices of the RNA Seq structures.
+ Avoidance of data loss can be approached through proper preprocessing.
+\end_layout
+
+\begin_layout Standard
+If the file is imported as a large matrix and not a structure (An error
+ will display if this occurs.), ensure that the preprocessing steps were
+ completed for every file to be imported.
+ A common mistake is to forget that numbers surrounded by asterisks (e.g.
+ '42') are strings, not numbers.
+\end_layout
+
+\begin_layout Section
+Microarray-RNASeq Retrieval
+\end_layout
+
+\begin_layout Standard
+(in process)
+\end_layout
+
+\end_body
+\end_document

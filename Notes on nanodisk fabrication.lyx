@@ -1,0 +1,675 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NOTES: Gold Microdisk Fabrication for Optical Displacement
+\end_layout
+
+\begin_layout Author
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Remember that initial submissions don't show the authors
+\end_layout
+
+\begin_layout Plain Layout
+names so you'll need to make this a 'Comment'.
+\end_layout
+
+\end_inset
+
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Abstract
+This protocol is an attempt to fabricate gold disks from solution.
+ The target is a hexagon with side length 50 to 100 microns and diameter
+ at least 20 nm.
+ This protocol has been adapted from previous attempts to fabricate these
+ disks.
+ All observations have been included for future use.
+\end_layout
+
+\begin_layout Standard
+jsalvi@rockefeller.edu
+\end_layout
+
+\begin_layout Page headings
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Don't panic the section numbering may look different in
+\end_layout
+
+\begin_layout Plain Layout
+LyX but LaTeX uses the correct Roman numerals and
+\end_layout
+
+\begin_layout Plain Layout
+Alpha for section counters.
+\end_layout
+
+\begin_layout Plain Layout
+It's just that LyX doesn't handle counters other than arabic
+\end_layout
+
+\begin_layout Plain Layout
+numerals.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another protocol attempts to use the light from lasers to displace the basilar
+ membrane.
+ In order for this to be successful, it may be necessary to place metallic
+ mirrors with high reflectance in order to increase momentum transfer from
+ incoming photons.
+ Though beads would be another option, these may increase the load to the
+ basilar membrane, thus decreasing accuracy of forthcoming data.
+ A protocol has been designed previously for the fabrication of gold mirrors,
+ with variations in the protocol in order to create disks within the range
+ desired for optical displacement of the basilar membrane.
+\end_layout
+
+\begin_layout Section
+2011-07-07: Attempt #1 - Prior Design
+\end_layout
+
+\begin_layout Standard
+The first attempt mirrored a previous protocol attempted in the laboratory
+ (Hudspeth AJ, 1997, 
+\begin_inset Quotes eld
+\end_inset
+
+Fabrication of Gold Mirrors for Interferometry
+\begin_inset Quotes erd
+\end_inset
+
+).
+ It is believed that a successful attempt with this protocol bodes well
+ for future modifications.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 0
+\series default
+ - Two solutions were prepared as described below:
+\end_layout
+
+\begin_layout Itemize
+Salicylic Acid (
+\begin_inset Formula $C_{7}H_{6}O_{3}$
+\end_inset
+
+) - 50 ml flask; 10 mM [0.014 g / 10 ml], where M=138.1g
+\end_layout
+
+\begin_layout Itemize
+Gold Chloride (
+\begin_inset Formula $HAuCl_{4}\cdot3H_{2}O$
+\end_inset
+
+) - 250 ml beaker (#1395); 1 mM [0.014 g / 25 ml], where M=393.8g
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Note that gold has a density of 19 
+\begin_inset Formula $g/cm^{3}$
+\end_inset
+
+.
+ Water for these solutions were obtained from the Milli-Q system.
+ 70
+\begin_inset Formula $\mu l$
+\end_inset
+
+ of 1 M HCl was added to the gold chloride solution in an attempt to lower
+ the pH to 2.5.
+ However, there appeared to be an error with the pH meter, and the lowest
+ pH reached was 2.7.
+ Additionally, the initial pH was surprisingly 10.3.
+ Upon adding the acid to solution, the color changed to a semi-transparent
+ purple.
+ This was another surprising finding, and it may be due to the pH of the
+ solution.
+ Future attempts will verify the acidity of solution with litmus strips.
+ 
+\end_layout
+
+\begin_layout Standard
+Both solutions were then heated to 90C and magnetically stirred.
+ Over a course of 40-50 seconds, 7 ml of the salicylate solution was added
+ dropwise to the gold chloride solution.
+ The new solution was then reheated to 90C and stirred.
+ It was noted that approximately 5 to 7 black flakes appproximately 0.5 mm
+ in diameter were found in the solution.
+ This was most likely a contaminant in the gold chloride as opposed to a
+ precipitate.
+ 
+\end_layout
+
+\begin_layout Standard
+The final solution was then sealed with Parafilm and stored at room temperature
+ in the dark away from mechanical disturbances.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Day 1 (2011-07-08) - 
+\series default
+The solution retained its purple hue, though it was slightly more transparent
+ than before.
+ No visible precipitate was noted.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 3 (2011-07-10)
+\series default
+ - No changes were noted.
+ The solution appeared to remain undisturbed and will be analyzed on Day
+ 4.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 4 (2011-07-11)
+\series default
+ - A gold to brown film was noted on the surface of the purple solution,
+ which was noted to be less transparent than before.
+ This may have been due to the formation of small gold particles in solution.
+ A number of small particles were harvested and transferred to a 100 ml
+ flask (#1396) containing 5 ml Milli-Q water.
+ The remaining, filtered solution, was returned to its original flask and
+ sealed with Parafilm.
+ Four samples of 10 
+\begin_inset Formula $\mu l$
+\end_inset
+
+ of the suspended particulate was transferred to slides for analysis under
+ differential interference contrast microscopy.
+ 
+\end_layout
+
+\begin_layout Standard
+Under DIC with the 40X oil-immesion objective, numerous particles ranging
+ from 5 to 20 
+\begin_inset Formula $\mu m$
+\end_inset
+
+ diameter plates to 2x10 
+\begin_inset Formula $\mu m$
+\end_inset
+
+ rods were found.
+ These particles were non-uniform in size, and the gold plates did not appear
+ flat.
+ The count ranged from 3 to 20 particles/hpf.
+ The new particles were stored and sealed with Parafilm.
+ It was then decided that the original solution would be allowed to remain
+ undisturbed for another 48 hours and reanalyzed.
+ However, the non-uniform nature of these particles may create difficulties
+ if utilizing the plates as mirrors.
+ Thus, a method by which gold or aluminum mirrors fabricated from a polymer
+ or lipid substrate may prove useful.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 6 (2011-07-13)
+\series default
+ - No changes had occurred in solution.
+ 
+\end_layout
+
+\begin_layout Section
+2011-07-14: Attempt #2: Prior Design (II)
+\end_layout
+
+\begin_layout Standard
+This second attempt at fabrication of gold microplates for use in interferometry
+ utilized the same protocol as 
+\series bold
+Section 2
+\series default
+.
+ However, due to concerns with the pH probe, the calibration solutions were
+ replaced and verified with a second pH probe prior to recalibration.
+ The concern arose from the purple color of the solution in the previous
+ attempt.
+ Additionally, a second protocol was initiated on this date, as described
+ in 
+\series bold
+Section 4
+\series default
+ below.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 0 - 
+\series default
+The solutions were prepared as previously described:
+\end_layout
+
+\begin_layout Itemize
+Salicylic Acid (
+\begin_inset Formula $C_{7}H_{6}O_{3}$
+\end_inset
+
+) - 50 ml flask; 10 mM [0.015 g / 10 ml], where M=138.1g
+\end_layout
+
+\begin_layout Itemize
+Gold Chloride (
+\begin_inset Formula $HAuCl_{4}\cdot3H_{2}O$
+\end_inset
+
+) - 250 ml beaker (#1395); 1 mM [0.011 g / 25 ml], where M=393.8g
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A modification to the previous protocol was the addition of three filtration
+ steps.
+ After the preparation of the gold chloride solution in milli-Q distilled
+ water, a single filtration was performed.
+ The pH meter was then recalibrated, and 80 
+\begin_inset Formula $\mu l$
+\end_inset
+
+ of 1M HCl was added to the solution to bring the pH to 3.01.
+ This solution was incubated at 90C for 30 minutes.
+ Additionally, the salicylic acid solution was prepared as before and filtered.
+ This solution was heated to 90C, and 7 ml of the salicylic acid solution
+ was added dropwise to the incubated gold chloride solution over a course
+ of 60 seconds.
+ The combined solution was then filtered once more and incubated at 90C
+ for 30 minutes.
+ After incubation, the solution was sealed with Parafilm and stored at room
+ temperature in a dark location away from mechanical disturbances.
+\end_layout
+
+\begin_layout Standard
+Unlike the previous attempt, this solution had a gold tint as opposed to
+ a purple hue.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Day 5 (2011-07-19) - 
+\series default
+The solution appeared lighter in color than before.
+ Additionally, two populations of particles were noted.
+ One population was a larger gold film on the surface of the solution, as
+ noted by Brüche in 1960.
+ The second population, located at the bottom surface of the container,
+ most likely contained the gold microplates of interest.
+ 
+\end_layout
+
+\begin_layout Standard
+This solution was then washed three times with milli-Q deionized water in
+ order to remove salicylic acid and gold chloride from the surface of the
+ gold particles.
+ Both populations of particles were then mounted for DIC imaging.
+ Under the 40X oil-immersion objective, numerous gold microplates were noted.
+ These plates were still far from uniform and of similar diameter and shape
+ as noted in 
+\series bold
+Section 2
+\series default
+.
+ However, the aforementioned floating population appeared to be a number
+ of aggregated gold particles that were allowed to coalesce with continued
+ suspension in solution.
+ The figure below demonstrates one of the aggregates.
+ Note the inability to focus on these particles due to the sheer size of
+ the population.
+ The impurities in the image were artifacts from the lens on the digital
+ camera combined with image processing enhancing these impurities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Josh/Documents/Lab/Hudspeth Lab/Imaging/20110720 DIC Gold Mirrors/P1010206.JPG
+	width 4.5in
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Figure 1.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Josh/Documents/Lab/Hudspeth Lab/Imaging/20110720 DIC Gold Mirrors/P1010206.JPG
+	width 4.5in
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Figure 2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+2011-07-14: Attempt #3: PAF-Gold Chloride Protocol (Khanna, 1986)
+\end_layout
+
+\begin_layout Standard
+In 1986, Khanna et al.
+ published a protocol for the fabrication of gold mirrors for use in interferome
+try based upon the techniques by Chiang and Turkevich in 1963.
+ The target dimension was a diameter of 50 to 100 microns, with the gold
+ mirrors being flat hexagonal plates.
+ The group added 1 g gold chloride to 119 ml deionized water.
+ After filtering and bringing the pH to 1.1 through the addition of 8.73 ml
+ of 20% EtOH, formalin was added to the solution.
+ A concentration of formalin was not noted in the protocol.
+ The solution was then incubated at 91-92C for 2 hours and subsequently
+ transferred to an evaporation dish in a 37C water bath.
+ This was left undisturbed for 4 to 5 weeks to allow the crystals to grow.
+ The group estimated the gold mirrors to have a diameter of 4E-8 to 7E-9
+ g at a 75 micron diameter.
+ However, the most successful attempts yielded a low number of optically
+ active gold disks of the correct dimension and shape.
+ 
+\end_layout
+
+\begin_layout Standard
+This protocol will adapt the protocol by Khanna in a smaller volume and
+ using the materials currently available.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Day 0 - 
+\series default
+The salicylic acid solution was prepared as below:
+\end_layout
+
+\begin_layout Itemize
+Gold Chloride (
+\begin_inset Formula $HAuCl_{4}\cdot3H_{2}O$
+\end_inset
+
+) - 250 ml beaker (#1395); 0.3 g / 40 ml, where M=393.8g
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This solution was then filtered and brought to pH 2.42 with 350 
+\begin_inset Formula $\mu l$
+\end_inset
+
+ of 1M HCl.
+ The solution was subsequently incubated at 90C for 30 minutes.
+ After incubation, 50 ml of 4% paraformaldehyde was added to the solution.
+ This was then incubated at 90C for 2 hours.
+ The final solution was then placed in a dish, covered (but not sealed),
+ and stored at room temperature in a dark location away from mechanical
+ disturbances.
+\end_layout
+
+\begin_layout Standard
+The solution in this experiment was a dark yellow, less transparent than
+ that in 
+\series bold
+Section 3
+\series default
+.
+ This was most likely due to the increased concentration of gold chloride.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Day 24 (08-02-2011) - 
+\series default
+The solution had now completely evaporated, leaving a layer of reflective
+ gold particles on the bottom surface of the glass beaker.
+ This film was subsequently washed three times with milli-Q distilled water
+ and transferred to a petri dish for storage.
+ Five microliters of particles suspended in solution were transferred to
+ a glass slide for imaging.
+ Differential interference contrast microscopy with a 60X water immersion
+ objective, 1X multiplier, and 10X eyepiece was used.
+ Imaging revealed numerous flat plates in multiple shapes.
+ Most, however, appeared to be hexagonal or triangular.
+ Sizes varied, and the figures below depict the median-sized plates.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Josh/Documents/Lab/Hudspeth Lab/Imaging/20110801 DIC Gold Mirrors PAF/P1010212.JPG
+	width 4.5in
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Figure 3.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Josh/Documents/Lab/Hudspeth Lab/Imaging/20110801 DIC Gold Mirrors PAF/P1010213.JPG
+	width 4.5in
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Figure 4.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calibration revealed a field of view of approximately 0.365 mm.
+ By comparing the pixel length of the field of view (circular diameter)
+ to the pixel length of the large diameter (2*[side length]) of each plate,
+ an approximate diameter of the plate can thus be calculated:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D_{1}\approx\frac{289.698px}{3174.608px}(365\mu m)\approx33.31\mu m$
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Eq.
+ 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D_{2}\approx\frac{150.479px}{2433.091px}(365\mu m)\approx22.57\mu m$
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Eq.
+ 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These diameters are somewhat smaller than those calculated in previous protocols
+ and are within the range of those created by Khanna et al.
+ in 1986.
+ The previous group allowed the crystals to grow for 4-5 weeks, whereas
+ this protocol measured the plates after approximately 24 days.
+ Thus, it is hypothesized that larger crystals could be grown in a greater
+ volume of solution and with longer growth times.
+\end_layout
+
+\begin_layout Section
+References
+\end_layout
+
+\begin_layout Enumerate
+Brüche, B.
+ (1960) Über sehr dünne Goldeinkristall-Plättchen.
+ Kolloid-Zeitschr.
+ 170: 97-104.
+\end_layout
+
+\begin_layout Enumerate
+Chiang, Y.s.
+ and J.
+ Turkevich (1963) Formation of platelike collidal gold.
+ J.
+ Colloid Sci.
+ 18: 772-783.
+\end_layout
+
+\begin_layout Enumerate
+Hudspeth AJ (1997) Fabrication of Gold Mirrors for Interferometry.
+ [Laboratory Protocol]
+\end_layout
+
+\begin_layout Enumerate
+Khanna, SM et al.
+ (1986) Homodyne interferometer for basilar membrane vibration measurements.
+ II.
+ Hardware and techniques.
+ Hearing Research.
+ 23(1): 27-36
+\end_layout
+
+\end_body
+\end_document
