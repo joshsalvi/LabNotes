@@ -1,0 +1,328 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Brief Anatomical Guide to the Amphibian Inner-Ear Dissection
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Standard
+These notes briefly review the dissection of the inner ear of the American
+ bullfrog, 
+\shape italic
+Rana catesbeiana
+\shape default
+.
+ The purpose here is to outline anatomical landmarks associated with both
+ the macro- and micro-dissection stages.
+ This dissection requires knowledge of these landmarks and a general understandi
+ng of inner-ear anatomy in order to best approach and isolate each structure.
+\end_layout
+
+\begin_layout Standard
+An anesthetized bullfrog is doubly pithed and its head removed with scissors.
+ Pithing is a procedure by which the frog's brain is destroyed with a pithing
+ rod inserted through the foramen magnum.
+ Pithing is achieved by first holding the frog, dorsal side up and rostral
+ end facing away from the experimenter, with the lower extremities extended.
+ The frog is then grasped with the first finger atop the nose and the second
+ finger below the jaw.
+ Its head is then rotated forward.
+ At the frog's midline at the level of the occipital process (a small bump
+ near the tympanum), there is a region of increased compliance.
+ This is the location of the foramen magnum.
+ During this process, one must take care to not apply high pressure to the
+ frog, as its skin is sensitive to pain.
+ The pithing rod is then rapidly plunged through the foramen magnum into
+ the cranial vault.
+ Moving the probe within the vault achieves brain destruction.
+ At this point, the frog is dead.
+ The pithing rod is then slowly withdrawn and rotated away from the experimenter
+ (reversing its orientation while remaining in the midline plane).
+ Once the rod's tip departs the cranial vault through the foramen magnum
+ but is still under the soft tissue, it is then forced caudally through
+ the vertebral foramina in order to destroy the spinal cord.
+ This procedure is termed double pithing.
+ Note that during this process, the frog may jump or make noise.
+ These are motor reflexes and are not higher brain functions.
+ After the procedure, the legs become stiff and finally limp due to flaccid
+ paralysis.
+ With the frog now deceased, the experimenter should test for corneal and
+ withdrawal reflexes.
+ 
+\end_layout
+
+\begin_layout Standard
+The frog's head may now be removed.
+ The frog's head is held with the thumb atop the nose and first finger grasping
+ its vomarine teeth (the two teeth at the rostral end of the frog's upper
+ palate) for stability.
+ To remove the lower jaw, scissors are used to sever the temporomandibular
+ joint bilaterally.
+ An orthogonal cut caudal to the tympanum severs the head.
+ This requires that the scissors cut through the vertebrae at the midline.
+ If the frog was appropriately doubly pithed, no reflexes will emerge and
+ there should be no propulsion of blood from the frog's body.
+ If this does occur, it may serve as a reminder to hone one's skills in
+ the second stage of pithing.
+ After the head is removed, it may be kept moist with standard saline, Ringer's
+ solution, or artificial perilymph, all of which should be appropriately
+ oxygenated throughout the remainder of the experiment.
+ For the dissection of the inner ear, it is most common to use standard
+ saline or artificial perilymph.
+\end_layout
+
+\begin_layout Standard
+The severed head is placed under a dissection microscope for lumination
+ and precision (Figure 1).
+ The frog has two sets of teeth, which include two vomarine teeth and rows
+ of maxillary teeth along the lateral perimeters of the head.
+ An ivory-colored upper palate conceals structures below.
+ At the lateral end of the palate, near the level of the tympanum, one may
+ find a hole of less than 0.5 cm in diameter known as the Eustachian tube.
+ Within this cavern is a long cylindrical bone, the columella auris.
+ The columella in amphibians, reptiles, and birds is a bony and cartilaginous
+ rod that couples the tympanic membrane to the inner ear.
+ Associated structures include the extracolumella and ascending process.
+ The palatal tissue is then cut and reflected to expose structures below.
+ Here one can see, from rostral (anterior) to caudal (posterior), the back
+ of the bulbous oculi and its appendages, a region of bone and cartilage
+ within which lies the inner ear, and tan-colored muscle.
+ 
+\end_layout
+
+\begin_layout Standard
+The muscle and top layer of cartilage is then removed to expose the inner
+ ear (Figure 2).
+ Within this region, a lollipop-shaped structure emerges.
+ Close examination reveals a smaller white hemispherical structure.
+ This is the otolith of the sacculus, a mass of calcium carbonate crystals.
+ Additionally, one side of this bulbous structure may contain dark patches
+ of melanocytes.
+ These act as landmarks for the basal (neural) side of the sacculus.
+ Opposite that side is the otolith, with the saccular macula in the middle.
+\end_layout
+
+\begin_layout Standard
+Close inspection of the inner under a dissection microscope reveals additional
+ structures (Figure 3).
+ Here the head has been rotated, with the anterior (rostral) end to the
+ right and the medial side at the top of the image.
+ Cranial nerve VIII enters and exits the spinal cord at the midline.
+ Near the spinal cord along the VIIIth cranial nerve sits Scarpa's ganglion,
+ a collection of neuronal cell bodies associated with vestibular end organs.
+ Moving laterally, the nerve branches in multiple directions.
+ One branch extends to the amphibian papilla and the basilar papilla, the
+ two primary hearing organs in the bullfrog.
+ Another branch extends to the vestibular organs, including the utriculus,
+ sacculus, and semicircular cristae.
+ Finally, a small branch enters the lagena, a mysterious organ whose function
+ remains one of legend.
+ Note the lacunar shape of the lagena.
+ This provides a prominent landmark in the dissection procedure.
+ One can also more readily spot the melanocytes dotting the tissues.
+ 
+\end_layout
+
+\begin_layout Standard
+The inner-ear organs may be removed by severing the VIIIth cranial nerve
+ and cutting each of the semicircular canals.
+ Removal of the tissue reveals the otic capsule below (Figure 4).
+ Note the presence of additional holes through which the semicircular ducts
+ pass.
+ These are the approximate positions at which the cuts to the semicircular
+ canals must be made.
+ Since these cuts are relatively blind as they are below the intact tissue,
+ it is beneficial to remember the structure of the otic capsule and approximate
+ locations of each canal.
+\end_layout
+
+\begin_layout Standard
+After removal of the inner-ear organs from each ear, the entire tissue is
+ placed in a bath of oxygenated saline and visualized with the aid of a
+ dissection miscoscope (Figure 5).
+ Each ear is a mirror image of its partner.
+ Starting from CN VIII, one can readily define the lagena and near this
+ organ the sacculus.
+ Opposite the lagenar side of the sacculus lies the utriculus.
+ In these images, it is easy to spot the severed semicircular canals.
+ Not shown in these images are the amphibian papilla and basilar papilla.
+ These can be found on the side of the lagena, underneath the nerve.
+ In the images, these appear as semi-translucent structures between the
+ lagena and cranial nerve and out of the focal plane.
+ To isolate the sacculus, the perilymphatic cistern is first opened.
+ This cistern lies on the neural (basal) side of the sacculus and corresponds
+ to the side shown in the figures.
+ After the perilymphatic cistern is opened and its tissue reflected, the
+ sacculus may be removed by severing its apical side from the endolymphatic
+ cistern.
+ Note that this side of the tissue holds the otolith, and the field of view
+ will be muddied by the presence of otoconia.
+ After the sacculus is removed, the challenge of visualizing each end organ
+ is significantly reduced.
+ The following figures steps through each end organ after isolation from
+ associated structures in order to assist an experimenter in the end-organ
+ hunt.
+\end_layout
+
+\begin_layout Standard
+The isolated sacculus is an egg-shaped structure with its sensory epithelium,
+ the macula, in the center (Figure 6).
+ Prior to dissection, the sensory epithelium is covered by otoconia, a few
+ of which remain in the image.
+ Hair bundles embedded in the macula are tightly coupled to a bean-shaped
+ otolithic membrane.
+ The bundles may be exposed by first digesting the tissue in an enzyme,
+ such as protease XXIV or collagenase IA, for a period of time defined by
+ the enzyme and its concentration.
+ After digestion, an eyelash is used to peel away the otolithic membrane
+ and reveal the hair bundles below.
+ 
+\end_layout
+
+\begin_layout Standard
+The lagena is a small structure with a crescent-shaped otolith (Figure 7).
+ While its sensory function is not well-understood, the lagena proves useful
+ as a handle when manipulating the tissue during dissection.
+ Damage to the lagena need not be inevitable, but consequences of destruction
+ are at this time nonexistent.
+\end_layout
+
+\begin_layout Standard
+The basilar papilla can be found by following the deep branch of CN VIII
+ behind the lagena and sacculus (Figure 8).
+ The nerve then divides once more to innervate the basilar papilla and continue
+ toward the posterior vertical canal.
+ This organ has an open tube-like structure that can be easily viewed from
+ one end.
+ Hair cells are innervated by the basilar papilla nerve, which fans outward
+ as it innervates the sensory epithelium.
+ Within the basilar papilla chamber, hair bundles protrude toward the center
+ and are coupled to an overlying tectorium.
+ Pressure gradients within the chamber deflect the tectorium and consequently
+ stimulate sensory hair cells.
+ This organ is one of the two primary auditory organs in amphibians, responding
+ to high-frequency (>1,000 Hz) stimuli.
+ 
+\end_layout
+
+\begin_layout Standard
+Hunting for the amphibian papilla may prove to be difficult in a first attempt,
+ as it is embedded deep within a chamber of cartilaginous tissue (Figure
+ 9).
+ Finding the organ becomes simple, however, if one follows CN VIII.
+ After removing the sacculus, the nerve branches are readily observed.
+ One of these branches passes behind the sacculus toward the side opposite
+ the utriculus.
+ The nerve then branches into two.
+ One branch continues toward the basilar papilla and posterior vertical
+ canal.
+ Another branch abruptly turns backward by about 135 º.
+ This curved branch is the amphibian papilla nerve.
+ Viewing the tissue from the side, two chambers can be seen that togeher
+ resemble a porcine snout.
+ The wall dividing these chambers contains the amphibian papilla.
+ Its sensory epithelium projects into the chamber on the interior of the
+ curvature of the amphibian papilla nerve.
+ The opening of this cavern is blocked by a thin contact membrane.
+ Pressure onto the membrane deflects it, which in turn causes a vibration
+ of the tectorial membrane of the amphibian papilla.
+ Motion of the tectorial membrane subsequently excites hair cells whose
+ hair bundles are tightly coupled to it.
+ One may then remove the bluish cartilage around the amphibian papilla to
+ expose this sensory organ (Figure 10).
+ The sensory epithelium of the amphibian papilla resembles a hatchet, with
+ its low-frequency triangular patch at the rostral end and an extension
+ rostrally along a tonotopic axis.
+ Near the midpoint of the epithelium lies a tectorial curtain that is attached
+ to the tectorial membrane coupled to hair bundles below.
+ The entire tissue is embedded in cartilage, rendering dissection of the
+ intact sensory epithelium of the amphibian papilla more difficult than
+ that of the sacculus.
+ Note the relative positions of the sacculus, amphibian papilla nerve, and
+ round window in this figure.
+ 
+\end_layout
+
+\begin_layout Standard
+A dissection of the amphibian inner ear requires both knowledge of the anatomy
+ and technical skill to parse through this anatomy.
+ Hopefully, the information in this brief note is adequate as an introduction
+ to the anatomy.
+ The technical skill, however, cannot be honed in such a document.
+ 
+\end_layout
+
+\end_body
+\end_document
