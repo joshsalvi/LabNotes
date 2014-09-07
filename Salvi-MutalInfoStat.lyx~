@@ -1,0 +1,392 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Surrogate Method for Statistical Significance of Mutual Information
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Subsection*
+Mutual Information
+\end_layout
+
+\begin_layout Standard
+We would like to estimate the information shared between two signals.
+ This information can be position, phase, spectral density, or any pertinent
+ data corresponding to that data set.
+ The mutual information between a stimulus S and a response R is defined
+ as:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $I(S;R)=\sum_{s\epsilon S}\sum_{r\epsilon R}p(s,r)\cdot log_{2}\left(\frac{p(s,r)}{p(s)p(r)}\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+where I(S;R) is the mutual information between S and R, p(s,r) is the joint
+ probability distribution of S and R, and p(s) and p(r) are the marginal
+ probability distributions of S and R, respectively.
+ This formula measures the information S and R share.
+ In other words, if one knows a certain amount about one signal, how much
+ will this reduce the uncertainty in the other signal? Information is thus
+ related to the inverse of the probability of occurrence of a certain value.
+ The case where I(S;R)=0 carries no information, and a case where I(S;R)>0
+ corresponds to some shared information between signals and thus dependence
+ of one upon the other.
+ Note that less probable events yield more information.
+ Mutual information is thus a measure of the inherent dependence expressed
+ in the joint distribution of S and R relative to the joint distribution
+ of S and R under the assumption of independence.
+ The marginal and joint probability distributions can be estimated using
+ equidistant or adaptive histogram-based estimators, kernel density estimators,
+ and k-nearest neighbor estimators.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Probability Distribution Estimators
+\end_layout
+
+\begin_layout Standard
+The marginal and joint probability distributions can be estimated using
+ equidistant or adaptive histogram-based estimators, kernel density estimators,
+ and k-nearest-neighbot estimators.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Histogram-based estimators bin the values into equidistant or adaptive paritions.
+ For an equidistant bin size, it is recommended that one use a rule-of-thumb,
+ such as the Freedman-Diaconis rule, where the bin width BW is defined as
+ 
+\begin_inset Formula $BW=2\cdot IQR(x)\cdot n^{-1/3}$
+\end_inset
+
+.
+ Here IQR(x) is the interquartile range of x, and n is the number of observation
+s in x.
+\end_layout
+
+\begin_layout Enumerate
+Kernel estimators construct smooth estimates of unknown densities by centering
+ kernel functions at the data samples.
+ A common kernel is a Gaussian function.
+ For kernel estimators, the user must provide a bandwidth, where smaller
+ bandwidths produce more detail.
+ Methods implemented in MATLAB and R use established methods to find an
+ optimal bandwidth.
+ The optimal bandwidth is the one that reduces the difference between an
+ estimate of a probability distribution and the true probability distribution.
+ The algorithm iterates through different bin widths until the difference
+ between the distribution of the current bin width and that of the previous
+ bin width falls below some threshold (for example, machine precision).
+ Benefits of kernel estimators over histogram-based estimators are a reduced
+ mean-squared-error rate of convergence to an underlying distribution, insensiti
+vity to the choice of origin, and the ability to specify specific window
+ shapes.
+\end_layout
+
+\begin_layout Enumerate
+k-nearest neighbor estimators find the distances of k-nearest neighbors
+ to estimate the joint and marginal densities.
+ 
+\end_layout
+
+\begin_layout Standard
+Here, kernel estimators are used to calculate the joint and marginal probability
+ distributions.
+\end_layout
+
+\begin_layout Subsection*
+Significance Test
+\end_layout
+
+\begin_layout Standard
+Given two signals S and R, a value of mutual information is first calculated.
+ For some signals, this may be 0.5 bits and for others it may be 3 bits or
+ more.
+ The meaning of this number changes with the length of the signal, the number
+ of bins used in an estimator, and the type of data being analyzed.
+ Many often determine significance of mutual information using a chi-squared
+ test or an exact test like Fisher's test.
+ However, these tests require that the data be independent identical distributio
+ns.
+ In most cases, signals do not satisfy this assumption.
+ We would thus want to develop a non-parametric method for determining significa
+nce.
+ Here we generate surrogates.
+ Surrogates are signals that resemble the data in some way but are otherwise
+ randomized.
+ For example, simple permutation of a signal will yield a surrogate that
+ preserves the shape of a displacement histogram, mean, and variance, but
+ will destroy temporal structure.
+ Here we do something similar but instead preserve nth-order Markov structure.
+ A large number of surrogates are generated from the signals S and R that
+ preserve the Markov order of S and R, mutual information is calculated
+ from each set of surrogates, and these values of mutual information are
+ used to generated a null hypothesis distribution.
+ To generate Markov surrogates, let us first begin with a signal of only
+ 1's and 0's for simplicity.
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $d=[00010111001011011]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let us next assume that these data have a first-order Markov structure.
+ In other words, each data point depends on one previous data point.
+ To do so, we must count the number of two-symbol 
+\begin_inset Quotes eld
+\end_inset
+
+words
+\begin_inset Quotes erd
+\end_inset
+
+ and count the number of these words.
+ In the case above, there are four words: 00, 01, 10, and 11.
+ The transition count matrix then becomes:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $f=\left[\begin{array}{cc}
+3 & 5\\
+4 & 4
+\end{array}\right]$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+meaning that we have three instances of 00, five instances of 01, four instances
+ of 10, and four instances of 11.
+ From this transition count matrix, we can then generate a surrogate that
+ preserves the frequency of words in the original signal d.
+ Three surrogates include
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $d_{s1}=[01110010010111001]$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $d_{s2}=[00110101111001001]$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $d_{s3}=[00010011101010111]$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+all of which have the same frequency of words:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $f=f_{s1}=f_{s2}=f_{s3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+After generation of a large number of surrogates, the mutual information
+ is calculated for each set, and this becomes the hull hypothesis distribution.
+ Finally, the value of mutual information from the original signals is assigned
+ a p-value that corresponds to the area under the probability distribution
+ at all points greater than I(S;R).
+\end_layout
+
+\begin_layout Standard
+A challenge arises when deciding what order to use in the generation of
+ a transition count matrix.
+ This can be accomplished in a preliminary test.
+ First, generate surrogates from the original signal at Markov order k (simple
+ permutation).
+ From these signals, calculate the block entropy:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $H_{k}=\sum_{x^{k}}p(x^{k})\cdot log_{2}p(x^{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Repeating this for each surrogate yields a distribution of entropies.
+ The probability that these surrogates yield a block entropy greater than
+ or equal to the observed entropy (the entropy of the original signal) yields
+ a p-value from this distribution.
+ The process is repeated for a set of orders from zero through any order
+ specified by the user.
+ For each order, a p-value is assigned, and a p-value greater than an alpha
+ level (e.g.
+ 0.05) corresponds to a case where the null hypothesis cannot be rejected.
+ In other words, p>0.05 is a case where that Markov order holds for the signal.
+ The smallest Markov order of the upheld orders is then selected.
+ (Note that once a Markov order k holds for a signal, all orders greater
+ than k will also hold.) This Markov order is then used for the signal to
+ generate a transition count matrix.
+ This is performed independently for S and R.
+\end_layout
+
+\begin_layout Subsection*
+References
+\end_layout
+
+\begin_layout Enumerate
+Shannon, C.
+ E.
+ A Mathematical Theory of Communication.
+ The Bell System Technical Journal 27, 379–423 (1948).
+\end_layout
+
+\begin_layout Enumerate
+Tobin, R.
+ & Houghton, C.
+ A Kernel-Based Calculation of Information on a Metric Space.
+ Entropy 15, 4540–4552 (2013).
+\end_layout
+
+\begin_layout Enumerate
+Pethel, S.D.
+ & Hahs, D.W.
+ Exact Test of Independence Using Mutual Information.
+ Entropy 16, 2839-2849 (2014).
+\end_layout
+
+\begin_layout Enumerate
+Palus, Milan.
+ Detecting Phase Synchronization in Noisy Systems.
+ Physics Letters A 235, 341-351 (1997).
+\end_layout
+
+\begin_layout Enumerate
+Papana, A.
+ & Kugiumtzis, D.
+ Evaluation of mutual information estimators on nonlinear dynamic systems.
+ arXiv 1–8 (2008).
+\end_layout
+
+\begin_layout Enumerate
+Sadeghi, S.
+ G., Chacron, M.
+ J., Taylor, M.
+ C.
+ & Cullen, K.
+ E.
+ Neural variability, detection thresholds, and information transmission
+ in the vestibular system.
+ The Journal of Neuroscience : the official journal of the Society for Neuroscie
+nce 27, 771–781 (2007).
+\end_layout
+
+\begin_layout Enumerate
+Eatock, R.
+ A.
+ & Songer, J.
+ E.
+ Vestibular Hair Cells and Afferents: Two Channels for Head Motion Signals.
+ Annu.
+ Rev.
+ Neurosci.
+ 34, 501–534 (2011).
+\end_layout
+
+\begin_layout Enumerate
+Cohen, M.X.
+ Analyzing Neural Time Series Data: Theory and Practice.
+ from Issues in Clinical and Cognitive Neuropsychology.
+ The MIT Press (2014).
+\end_layout
+
+\end_body
+\end_document
