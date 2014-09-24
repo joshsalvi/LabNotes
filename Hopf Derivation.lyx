@@ -1,0 +1,217 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Derivation of the Hopf Normal Form
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Subsection*
+Normal Form From a Planar System
+\end_layout
+
+\begin_layout Standard
+First, consider the following planar system:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{x}{}_{1}=\mu x_{1}-x_{2}+Ax_{1}(x_{1}^{2}-x_{2}^{2})$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{x}{}_{2}=x_{1}+\mu x_{2}+Ax_{2}(x_{1}^{2}-x_{2}^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z=x_{1}+ix_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{z}=x_{1}-ix_{2}$
+\end_inset
+
+.
+ The previous equations then become:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{z}=\dot{x}{}_{1}-i\dot{x}{}_{2}=\mu x_{1}-x_{2}+Ax_{1}(x_{1}^{2}-x_{2}^{2})-i\left[x_{1}+\mu x_{2}+Ax_{2}(x_{1}^{2}-x_{2}^{2})\right]$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+which simplifies to
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{z}=\mu z+iz+A(x_{1}^{3}+ix_{2}^{3}+x_{1}x_{2}^{2}+ix_{1}^{2}x_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Note that the term 
+\begin_inset Formula $iz$
+\end_inset
+
+ may be multiplied by a frequency term 
+\begin_inset Formula $\omega$
+\end_inset
+
+ by using the planar system
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{x}{}_{1}=\mu x_{1}-\omega x_{2}+Ax_{1}(x_{1}^{2}-x_{2}^{2})$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{x}{}_{2}=\omega x_{1}+\mu x_{2}+Ax_{2}(x_{1}^{2}-x_{2}^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+By combining the above equations, this results in the normal form of the
+ Hopf bifurcation up to the third-order component:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{z}=\mu z+i\omega z+Az^{2}\bar{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For a supercritical Hopf bifurcation A = 1 in which the origin is globally
+ asymptotically stable, and for a subcritical Hopf bifurcation A = -1 in
+ which the origin is locally asymptotically stable but is surrounded by
+ an unstable circular cycle.
+ The Hopf frequency is then defined by 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+ We can alternatively define the normal form in polar coordinates using
+ 
+\begin_inset Formula $z=\rho e^{i\varphi}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{\rho}=\rho(\mu+i\omega+A\rho^{2})$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\dot{\varphi}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Here it becomes apparent that the limit cycle can be approximated by a circle
+ with radius 
+\begin_inset Formula $\sqrt{\mu}$
+\end_inset
+
+ for a supercritical Hopf bifurcation or an unstable cycle with radius 
+\begin_inset Formula $\sqrt{-\mu}$
+\end_inset
+
+ for a subcritical Hopf bifurcation.
+\end_layout
+
+\end_body
+\end_document
