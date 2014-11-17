@@ -1,0 +1,376 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Control of Virtual Impedances in a Parallel RLC Circuit
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Standard
+In a hair cell, deflection of the hair bundle causes current to flow into
+ the bundle, depolarizing the cell below.
+ The electrical properties of the hair cell can be considered to be a combinatio
+n of three circuits [Fisher et al., 2011].
+ An apical resistance and capacitance describe the voltage drop at the level
+ of the hair bundle for a given current injection.
+ A shunt resistance and capacitance describe a shunt pathway through supporting
+ cells and the extracellular space.
+ Finally, a basolateral resistance, inductance, and capacitance describe
+ the voltage drop at the basolateral surface of the hair-cell soma.
+ We can simply this circuit to include only the basolateral circuit, excluding
+ the details of hair-bundle conductance and the shunt pathway.
+\end_layout
+
+\begin_layout Standard
+A parallel RLC circuit has a total current I equal to
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $I=I_{R}+I_{L}+I_{C}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+in which the three currents correspond to the currents passing through a
+ resistor with resistance R, an inductor with inductance L, and a capacitor
+ with capacitance C.
+ Inserting the voltages corresponding to each current, we obtain
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $I-\frac{V}{R}-\frac{1}{L}\int Vdt-C\frac{dV}{dt}=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $I-V''-\frac{1}{RC}V'+\frac{1}{LC}V=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The corresponding impedance, Z, is equal to
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $Z=\frac{V}{I}=\frac{1}{\sqrt{\frac{1}{R}^{2}+(\frac{1}{X_{L}}-\frac{1}{X_{C}})^{2}}}=\frac{1}{\sqrt{\frac{1}{R}^{2}+(\frac{1}{\omega L}-\omega C)^{2}}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+in which 
+\begin_inset Formula $\omega$
+\end_inset
+
+is the angular frequency.
+ 
+\end_layout
+
+\begin_layout Standard
+In a voltage clamp, the output voltage (Vo) is calculated by taking the
+ difference between a commang voltage (Vc) and the membrane voltage (Vm)
+ and subsequently multiplying it by a proportional gain
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{o}=G(V_{c}-V_{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For a given current I and access resistance 
+\begin_inset Formula $R_{a}$
+\end_inset
+
+, noting that the output voltage is divided between the access resistance
+ and the membrane resistance,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{o}=V_{m}+R_{a}I$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+which becomes
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{m}=V_{c}\frac{1}{1+G}-\frac{R_{a}I}{I+G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+after combining the two previous equations.
+ As the gain G becomes large, the membrane voltage approaches the command
+ voltage, and the effects of the access resistance are reduced.
+\end_layout
+
+\begin_layout Standard
+We can combine the equation for a parallel RLC circuit with the hair bundle
+ to include a virtual capacitance, resistance and inductance, along with
+ some additional current, yielding
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $I_{HB}-\frac{1}{RC}V_{m}'-\frac{1}{LC}V_{m}=I-\frac{1}{R_{V}C_{V}}V_{m}'-\frac{1}{L_{V}C_{V}}V_{m}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Note that the second derivative of the voltage is not included in this equation.
+ Substituting the euqation for membrane voltage in a voltage clamp and assuming
+ that the effect of the access resistance is small with high gain, this
+ becomes
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $(I-I_{HB})-(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}V_{c}'-(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\frac{G}{1+G}V_{c}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The first derivative of the command voltage can be calculated by taking
+ the difference between each value of command voltage and dividing by a
+ time step dt, yielding
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $(I_{n}-I_{HB,n})-(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}\frac{Vc_{n}-V_{C,n-1}}{\delta t}-(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\frac{G}{1+G}V_{c,n}=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\delta t(I_{n}-I_{HB,n})-(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}V_{c,n}+(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}V_{c,n-1}-\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\frac{G}{1+G}V_{c,n}=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\left[(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\frac{G}{1+G}\right]V_{c,n}=\delta t(I_{n}-I_{HB,n})+(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})\frac{G}{1+G}V_{c,n-1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $\left[(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\right]V_{c,n}=\frac{\delta t(I_{n}-I_{HB,n})(1+G)}{G}+(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})V_{c,n-1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{c,n}=\frac{\delta t(I_{n}-I_{HB,n})(1+G)}{G\left[(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\right]}+\frac{(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})V_{c,n-1}}{(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Quote
+and 
+\begin_inset Formula $V_{c,n}=\frac{\delta t(I_{n}-I_{HB,n})(1+G)}{G\left[(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})\right]}+\frac{(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})V_{c,n-1}}{(\frac{1}{R_{V}C_{V}}-\frac{1}{RC})+\delta t(\frac{1}{L_{V}C_{V}}-\frac{1}{LC})}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This equation modifies the hair bundle current and membrane impedances by
+ virtual parameters to yield modified electrical properties of the hair
+ cell.
+ If one were to ignore the properties of the hair cell or set these values
+ to zero, the above equation becomes
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{c,n}=\frac{\delta tI_{n}(1+G)}{\frac{G}{R_{V}C_{V}}+G\delta t\frac{1}{L_{V}C_{V}}}+\frac{V_{c,n-1}}{1+\delta t\frac{R_{V}C_{V}}{L_{V}C_{V}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This equation allows one to define a virtual resistance, virtual capacitance,
+ virtual inductance, and an arbitrary current waveform on a point-by-point
+ basis.
+ If the current waveform is set to zero, the equation simplifies to
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $V_{c,n}=\frac{V_{c,n-1}}{1+\delta t\frac{R_{V}C_{V}}{L_{V}C_{V}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This formula for a command voltage in a voltage-clamp system provides a
+ feedforward protocol to adjust different control parameters in a voltage-clamp
+ feedback setup.
+ Note that the resonant frequency in a parallel RLC circuit is
+\end_layout
+
+\begin_layout Quote
+\begin_inset Formula $f_{0}=\frac{1}{2\pi\sqrt{LC}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Changing either the inductance or the capacitance in the circuit will change
+ the natural frequency of electrical resonance in a hair cell.
+ Prior work has shown that a simple circuit with the same components plus
+ parameter-dependent and time-dependent calcium and potassium conductance
+ allows the hair cell to cross a supercritical Hopf bifurcation [Ospeck
+ et al., 2008].
+ It may be possible to do the same by adjusting these parameters in an active
+ hair cell.
+ Additionally, the feedback between the mechanical activity of a hair bundle
+ and the electrical activity of a hair cell can be dissected by implementing
+ mechanical-load and electrical-impedance clamps.
+\end_layout
+
+\begin_layout Subsubsection*
+References
+\end_layout
+
+\begin_layout Enumerate
+Moore, J.
+ W.
+ (1971).
+ Voltage clamp methods.
+ In Biophysics and Physiology of Excitable Membranes.
+ (ed.
+ Adelman, W.
+ J.) pp.
+ 143-167.
+ New York: Van Nostrand.
+\end_layout
+
+\begin_layout Enumerate
+Fisher, J.
+ A.
+ N., Kowalik, L., & Hudspeth, A.
+ J.
+ (2011).
+ Imaging electrical resonance in hair cells.
+ Proceedings of the National Academy of Sciences of the United States of
+ America, 108(4), 1651–1656.
+ doi:10.1073/pnas.1017467108
+\end_layout
+
+\begin_layout Enumerate
+Eguíluz, V.
+ M., Ospeck, M., Choe, Y., Hudspeth, A.
+ J., & Magnasco, M.
+ O.
+ (2000).
+ Essential nonlinearities in hearing.
+ Physical Review Letters, 84(22), 5232–5235.
+\end_layout
+
+\begin_layout Enumerate
+Ospeck, M., Eguíluz, V.
+ M., & Magnasco, M.
+ O.
+ (2001).
+ Evidence of a Hopf Bifurcation in Frog Hair Cells.
+ Biophysical Journal, 80(6), 2597–2607.
+ doi:10.1016/S0006-3495(01)76230-3
+\end_layout
+
+\end_body
+\end_document
