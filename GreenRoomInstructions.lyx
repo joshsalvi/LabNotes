@@ -1,0 +1,522 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass ctex-book
+\begin_preamble
+\usepackage{placeins}
+\date{ }
+\usepackage[raggedright]{titlesec}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 0.5in
+\headsep 0.5in
+\footskip 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Before Experiment
+\end_layout
+
+\begin_layout Itemize
+Center photodiode stage (2.5)
+\end_layout
+
+\begin_layout Itemize
+Turn on all necessary equipment:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three power strips
+\end_layout
+
+\begin_layout Itemize
+Photodiode
+\end_layout
+
+\begin_layout Itemize
+PZT amplifiers
+\end_layout
+
+\begin_layout Itemize
+LED (turn key)
+\end_layout
+
+\begin_layout Itemize
+Light source (e.g.
+ XCite lamp)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note: If using the excitation lamp, only turn it on for the duration of
+ the experiment.
+ Additionally, if you turn the lamp on, let it remain on for at least 30
+ minutes.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Set to the correct circuit: (1) 
+\begin_inset Formula $V_{C}$
+\end_inset
+
+ : unclamped or (2) 
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ : clamped
+\end_layout
+
+\begin_layout Itemize
+Readjust all filters as necessary (adjust the cutoff frequencies for 
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ and 
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ as needed for your experiment)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ filter (Kemo BM8, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Pul
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ filter (Kemo BM8, right side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Fla
+\begin_inset Quotes erd
+\end_inset
+
+, flat response to 
+\begin_inset Formula $f_{C}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{mod,CL-PZT}$
+\end_inset
+
+ filter (Butterworth, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Low-pass
+\end_layout
+
+\begin_layout Itemize
+0 dB gain
+\end_layout
+
+\begin_layout Itemize
+Flat delay
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Check PZT amplifiers
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open-loop (left) centered at 55 and closed-loop (right) centered at 50
+\end_layout
+
+\begin_layout Itemize
+Ensure closed-loop amplifier has CL on (green indicator)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Turn on television.
+ Using the remote, switch to input 1 (Menu, Input, Input)
+\end_layout
+
+\begin_layout Itemize
+Center the condenser
+\end_layout
+
+\begin_layout Itemize
+Check that the photodiode is centered at zero when there is no fiber.
+ Adjust the potentiometer to center it if not.
+\end_layout
+
+\begin_layout Itemize
+Host computer password: (kTnoise)
+\end_layout
+
+\begin_layout Itemize
+Restart LabVIEW and open the appropriate VIs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Probe characterization: 
+\begin_inset Quotes eld
+\end_inset
+
+Probe Characterization (SI)
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Beta (SI)
+\begin_inset Quotes erd
+\end_inset
+
+ [C:
+\backslash
+LabVIEW
+\backslash
+Experimental modules
+\backslash
+]
+\end_layout
+
+\begin_layout Itemize
+Load clamp, ver.1 (PID): 
+\begin_inset Quotes eld
+\end_inset
+
+Mechstim
+\begin_inset Quotes erd
+\end_inset
+
+ then 
+\begin_inset Quotes eld
+\end_inset
+
+Clampy.lvproj
+\begin_inset Quotes erd
+\end_inset
+
+ [C:
+\backslash
+Users
+\backslash
+Hudspeth
+\backslash
+Documents
+\backslash
+Labview Data
+\backslash
+wait for next scan
+\backslash
+]
+\end_layout
+
+\begin_layout Itemize
+Load clamp, ver.2: 
+\begin_inset Quotes eld
+\end_inset
+
+Variable load clamp
+\begin_inset Quotes erd
+\end_inset
+
+ then 
+\begin_inset Quotes eld
+\end_inset
+
+Load clamp.lvproj
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the real-time project, open and run 
+\begin_inset Quotes eld
+\end_inset
+
+Target - Main program
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Input the fiber's stiffness and drag coefficients, set the gain to zero
+\end_layout
+
+\begin_layout Itemize
+Ensure that the scaling factors are the same between VLC and LC for 
+\begin_inset Formula $F_{E}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{V}$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{V}$
+\end_inset
+
+, and 
+\begin_inset Formula $m_{V}$
+\end_inset
+
+.
+ If you wish to control any of these parameters dynamically, toggle the
+ indicator to green for those parameters.
+ 
+\end_layout
+
+\begin_layout Itemize
+If the clamp is running successfully with a fiber and the photodiode turned
+ on, you should see the red scale in the upper-left update in real time
+ when the gain is set to a nonzero value.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Chapter*
+After Experiment
+\end_layout
+
+\begin_layout Itemize
+Center photodiode stage (2.5)
+\end_layout
+
+\begin_layout Itemize
+Turn off all necessary equipment:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three power strips
+\end_layout
+
+\begin_layout Itemize
+Photodiode
+\end_layout
+
+\begin_layout Itemize
+PZT amplifiers
+\end_layout
+
+\begin_layout Itemize
+LED (turn key)
+\end_layout
+
+\begin_layout Itemize
+Light source (e.g.
+ XCite lamp)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Return filters to their default values:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ filter (Kemo BM8, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Pul
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ filter (Kemo BM8, right side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Fla
+\begin_inset Quotes erd
+\end_inset
+
+, flat response to 
+\begin_inset Formula $f_{C}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Close LabVIEW
+\end_layout
+
+\begin_layout Itemize
+Thoroughly clean objective, condenser, mirrors, and stage
+\end_layout
+
+\begin_layout Itemize
+Remove any broken glass, pipettes, and reagants from the room
+\end_layout
+
+\begin_layout Chapter*
+Troubleshooting an unresponsive target computer
+\end_layout
+
+\begin_layout Standard
+If the real-time software does not connect to the target computer, or if
+ an error arises in the real-time system, you should try the following:
+\end_layout
+
+\begin_layout Enumerate
+Close all LabVIEW software on the host computer.
+ Restart all software, and try to run the software again.
+ Note that this solution also works if LabVIEW reports an out-of-memory
+ error.
+\end_layout
+
+\begin_layout Enumerate
+If step (1) does not work, close all software and shut down both the host
+ and target computers.
+ Turn both computers on (pw: (kTnoise)), and try to run the software again.
+\end_layout
+
+\end_body
+\end_document
