@@ -1,0 +1,1985 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass ctex-book
+\begin_preamble
+\usepackage{placeins}
+\date{ }
+\usepackage[raggedright]{titlesec}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 0.5in
+\headsep 0.5in
+\footskip 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Basic Operation of the Mechanical-Load Clamp
+\end_layout
+
+\begin_layout Author
+Joshua D.
+ Salvi
+\end_layout
+
+\begin_layout Chapter*
+Introduction
+\end_layout
+
+\begin_layout Standard
+\noindent
+This guide provides a series of checklists for the basic operation of a
+ mechanical-load clamp 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Salvi:2015by,Salvi:2014MoH"
+
+\end_inset
+
+.
+ This clamp has been used previously to control the mechanical loads delivered
+ to individual hair bundles, thus permitting exploration of hair-bundle
+ phenomena within different locales of its state space 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Salvi:2015by,OMaoileidigh:2012gl"
+
+\end_inset
+
+.
+ This document includes:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Section I.
+ Hardware Initialization
+\series default
+.
+ Provided here is a brief checklist that should be followed prior to every
+ experiment.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Section II.
+ Software Initialization.
+
+\series default
+ This section provides another checklist that should allow a user to initialize
+ the LabVIEW real-time environment and the experimental modules.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Section III.
+ Protocol Setup and Implementation.
+ 
+\series default
+Included here is a guide on preparing a protocol in the experimental module
+ and load clamp software.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Section IV.
+ Troubleshooting.
+ 
+\series default
+Common problems with the load clamp are detailed here, along with possible
+ solutions to those issues.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Section V.
+ Hardware and Software Shutdown.
+
+\series default
+ Similar to the checklist in Section I, this section includes a brief checklist
+ that should be followed after every experiment.
+\end_layout
+
+\begin_layout Chapter*
+I.
+ Hardware Initialization
+\end_layout
+
+\begin_layout Itemize
+Center the photodiode stage to a value of 2.5 on the set screw.
+\end_layout
+
+\begin_layout Itemize
+Ensure that the DC offset knobs piezoelectric transducer amplifiers are
+ rotated to their extrema in the counter-clockwise direction and that the
+ power switches are off.
+\end_layout
+
+\begin_layout Itemize
+Turn on all necessary equipment:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three power strips (right side of the equipment rack)
+\end_layout
+
+\begin_layout Itemize
+Photodiode (when the room is dark)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note: Ensure that the cover to the photodiode is on in order to protect
+ the photodiode unit.
+ 
+\bar under
+Never
+\bar default
+ turn on the photodiode when the room's lights are on.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+LED control box (turn the key)
+\end_layout
+
+\begin_layout Itemize
+Transmitted-light source (e.g.
+ halogen lamp or XCite lamp)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note: If using an excitation lamp for transmitted light, only turn it on
+ for the duration of the experiment.
+ Additionally, if you turn the lamp on, let it remain on for at least 30
+ minutes.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+On the rack, toggle the system to the correct circuit, found in the upper-right
+ panel: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1) 
+\begin_inset Formula $V_{C}$
+\end_inset
+
+ : unclamped
+\end_layout
+
+\begin_layout Itemize
+(2) 
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ : clamped; Employ this circuit if employing the load clamp.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Readjust all filters as necessary.
+ You might later adjust the cutoff frequencies for 
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ and 
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ as needed for your experiment.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ filter (Kemo BM8, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Pul
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ filter (Kemo BM8, right side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Fla
+\begin_inset Quotes erd
+\end_inset
+
+, flat response to 
+\begin_inset Formula $f_{C}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{mod,CL-PZT}$
+\end_inset
+
+ filter (Butterworth, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Low-pass
+\end_layout
+
+\begin_layout Itemize
+0 dB gain
+\end_layout
+
+\begin_layout Itemize
+Flat delay
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Turn on and adjust the piezoelectric transducer amplifiers.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To turn the amplifiers on, flip the power switch on each amplifier.
+\end_layout
+
+\begin_layout Itemize
+Adjust the DC offset knob to achieve appropriate values.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open-loop (left): 55 V 
+\end_layout
+
+\begin_layout Itemize
+Closed-loop (right): 50 V
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ensure closed-loop amplifier has CL on (green indicator).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Turn on television.
+ Using the remote, switch to input 1 (
+\begin_inset Quotes eld
+\end_inset
+
+Menu, Input, Input
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+If necessary, center the condenser using the two set screws at the condenser's
+ base.
+ 
+\end_layout
+
+\begin_layout Itemize
+Check that the photodiode is centered at zero when there is no fiber.
+ Adjust the potentiometer (black knob on the photodiode box) to center it
+ if not.
+\end_layout
+
+\begin_layout Chapter*
+II.
+ Software Initialization
+\end_layout
+
+\begin_layout Itemize
+Log in to the host computer if it is not currently turned on or logged in.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Host computer password: (kTnoise)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Restart LabVIEW and open the appropriate programs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Probe characterization: 
+\begin_inset Quotes eld
+\end_inset
+
+Probe Characterization (SI)
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Beta (SI)
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Directory: C:
+\backslash
+LabVIEW
+\backslash
+Experimental modules
+\backslash
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Load clamp: Open 
+\begin_inset Quotes eld
+\end_inset
+
+Load clamp.lvproj
+\begin_inset Quotes erd
+\end_inset
+
+ (Figure 1A).
+ This will open the Load Clamp project on the real-time target computer.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Directory: C:
+\backslash
+Users
+\backslash
+Hudspeth
+\backslash
+Documents
+\backslash
+LabVIEW Data
+\backslash
+wait for next scan
+\backslash
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From within the Load clamp project, open the Variable Load Clamp (Figure
+ 1B).
+ This will open the Variable Load Clamp software on the host computer (Figure
+ 2).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the real-time project, open and run 
+\begin_inset Quotes eld
+\end_inset
+
+Target - Main program
+\begin_inset Quotes erd
+\end_inset
+
+ under the 
+\begin_inset Quotes eld
+\end_inset
+
+GreenRT
+\begin_inset Quotes erd
+\end_inset
+
+ drop-down menu (Figs.
+ 1B and 3).
+\end_layout
+
+\begin_layout Itemize
+A dialog box will open with a value for the scan rate and defined inputs
+ and outputs.
+ Click the 
+\begin_inset Quotes eld
+\end_inset
+
+Run
+\begin_inset Quotes erd
+\end_inset
+
+ arrow at the upper-left of the window to start the load clamp software.
+ If a dialog box opens asking whether you would like to save any changes
+ to the Error Handler, hit Enter/Return to continue.
+\end_layout
+
+\begin_layout Itemize
+Input the fiber's stiffness and drag coefficients, set the gain to zero
+ (Fig.
+ 3C).
+ If you are clamping only to the load stiffness and an external force, and
+ your fiber's drag coefficient is small (
+\begin_inset Formula $<200-300$
+\end_inset
+
+ 
+\begin_inset Formula $nN\cdot s\cdot m^{-1}$
+\end_inset
+
+), you need not input the fiber's drag coefficients.
+ This will improve the clamp's stability.
+\end_layout
+
+\begin_layout Itemize
+Ensure that the scaling factors are the same between VLC and LC for 
+\begin_inset Formula $F_{E}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{V}$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{V}$
+\end_inset
+
+, and 
+\begin_inset Formula $m_{V}$
+\end_inset
+
+.
+ If you wish to control any of these parameters dynamically, toggle the
+ indicator to green for those parameters.
+ (Figs.
+ 2E and 3E).
+\end_layout
+
+\begin_layout Itemize
+If the clamp is running successfully with a fiber and the photodiode turned
+ on, you should see the red scale in the upper-left update in real time
+ when the gain is set to a nonzero value (Fig.
+ 3D).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Click on the 
+\begin_inset Quotes eld
+\end_inset
+
+Run
+\begin_inset Quotes erd
+\end_inset
+
+ arrow at the upper-left of the Variable Load Clamp software (Fig.
+ 2).
+ This will start the load clamp software on the host computer.
+ Note that the Load Clamp project must be running on the real-time target
+ computer before the Variable Load Clamp software can successfully run on
+ the host computer.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Once the software is running, open The Shell (Fig.
+ 2A).
+ This should be done once per session, as The Shell will define where the
+ day's experiments will be saved.
+ A dialog box will open asking you to select a folder to save the day's
+ experiments and whether this is a new session, new ear, and/or new cell.
+ Click on the folder with your initials (or one of your choice), select
+ all three options on the right, and click OK.
+ If another window opens asking for additional parameters, simply click
+ the gray box at the top-right to continue.
+ You do not need to include these parameters to run the software.
+ 
+\end_layout
+
+\begin_layout Itemize
+Note that you can save in a new folder by clicking 
+\begin_inset Quotes eld
+\end_inset
+
+New Cell
+\begin_inset Quotes erd
+\end_inset
+
+ for subsequent experiments in that session.
+ To change the Ear or Session folders, The Shell must instead be run again.
+\end_layout
+
+\begin_layout Itemize
+Prior to running any protocol, the 
+\begin_inset Quotes eld
+\end_inset
+
+Save
+\begin_inset Quotes erd
+\end_inset
+
+ toggle must be on.
+ This allows the software to save data to a file on the fly.
+ If the 
+\begin_inset Quotes eld
+\end_inset
+
+Save
+\begin_inset Quotes erd
+\end_inset
+
+ toggle is initially off and subsequently turned on during an experiment,
+ however, the program will not have an I/O stream to an appropriate file
+ and will crash.
+\end_layout
+
+\begin_layout Itemize
+Ensure that the scan rates are equal for both the host and target computers
+ (Fig.
+ 2B).
+ 
+\end_layout
+
+\begin_layout Itemize
+Toggle on all of the inputs that you wish to save (Fig.
+ 2D).
+\end_layout
+
+\begin_layout Itemize
+Set the scaling factors for each of the load clamp parameters and once again
+ ensure that these are equal to those on the real-time target computer (Figs.
+ 2E and 3E).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/joshsalvi/Documents/Lab/Lab/screencaps/fig1.eps
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Opening the Load Clamp Project.
+ (A)
+\series default
+ Directory for LabVIEW's load-clamp VI.
+ This program will open on the target computer.
+ If you have trouble opening the VI, see the section titled 
+\begin_inset Quotes eld
+\end_inset
+
+Troubleshooting an Unresponsive Target Computer.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+(B)
+\series default
+ Within the dialog window for Load_clamp.lvproj is a VI titled 
+\begin_inset Quotes eld
+\end_inset
+
+Variable Load Clamp.
+\begin_inset Quotes erd
+\end_inset
+
+ Double-clicking this option will open the Variable Load Clamp software
+ on the host computer.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/joshsalvi/Documents/Lab/Lab/screencaps/fig2.eps
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Anatomy of the Variable Load Clamp Software.
+ (A) 
+\series default
+Main controls for running the load clamp software, including toggles for
+ saving, running The Shell, and adding comments.
+ 
+\series bold
+(B)
+\series default
+ Waveform properties.
+ Here you can input the length of the waveforms, number of waveforms, number
+ of averages, and the sample rate.
+ 
+\series bold
+(C)
+\series default
+ Waveform generation.
+ Each row corresponds to a different output, including (from top to bottom)
+ the load stiffness, external force, and virtual mass.
+ The output for the virtual drag coefficient is not shown in this image.
+ Columns on the left correspond to those waveforms generated in 
+\begin_inset Quotes eld
+\end_inset
+
+idle
+\begin_inset Quotes erd
+\end_inset
+
+ mode, whereas those on the right correspond to those generated in 
+\begin_inset Quotes eld
+\end_inset
+
+run
+\begin_inset Quotes erd
+\end_inset
+
+ mode.
+ Within each box, one can define a waveform type and all of its properties.
+ If the amplitude type is set to 
+\begin_inset Quotes eld
+\end_inset
+
+Array,
+\begin_inset Quotes erd
+\end_inset
+
+ then the user must input values manually as individual entries in an array
+ box located below the virtual mass input box.
+ 
+\series bold
+(D)
+\series default
+ These display the inputs, from top to bottom, of the output position signal
+ (
+\begin_inset Formula $X_{O}$
+\end_inset
+
+), photodiode signal (
+\begin_inset Formula $X_{D}$
+\end_inset
+
+), commanded position (
+\begin_inset Formula $X_{C}$
+\end_inset
+
+), and all four load-clamp parameters (Fig.
+ 4D).
+ Below each plot is a toggle that allows the user to turn that waveform
+ on or off.
+ If toggled on, the waveform will both be displayed and saved.
+ Otherwise, the waveform will not be saved.
+ 
+\series bold
+(E)
+\series default
+ Here the user can open an alpha calibration script prior to each recording.
+ Additionally, the user must input scaling factors for each of the load-clamp
+ parameters.
+ Because the data acquisition card is limited to ±10 V, the scaling factor
+ should be slightly larger than the one-tenth the maximum absolute value
+ of that load-clamp parameter.
+ 
+\series bold
+(F)
+\series default
+ Here the user can input the range and number of increments for each of
+ the load-clamp parameters.
+ A MATLAB script will then automatically generate all parameter values in
+ the parameter space defined by the user.
+ The user can also define the type of generation (linear or exponential)
+ and can change the order by which the four parameters are iterated.
+ To generate and save the parameters, the user must activate (to green)
+ the Save toggle and click 
+\begin_inset Quotes eld
+\end_inset
+
+Calculate state space.
+\begin_inset Quotes erd
+\end_inset
+
+ If the user wishes to subdivide the parameter space into shorter time increment
+s, a maximum time (in s) should be defined with 
+\begin_inset Quotes eld
+\end_inset
+
+Auto state space
+\begin_inset Quotes erd
+\end_inset
+
+ toggled on.
+ If the user does not wish to include this subdivision, the maximum time
+ should be set to zero.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/joshsalvi/Documents/Lab/Lab/screencaps/fig3.eps
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Load clamp main program on the real-time target computer.
+ (A) 
+\series default
+Predefined ranges and offsets for the load clamp software.
+ Do not change these values.
+ 
+\series bold
+(B)
+\series default
+ To turn the load clamp software off, click the 
+\begin_inset Quotes eld
+\end_inset
+
+STOP
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ 
+\series bold
+(C)
+\series default
+ In the left column, the user can input the stimulus fiber's stiffness (
+\begin_inset Formula $K_{SF}$
+\end_inset
+
+) and its two drag coefficients (
+\begin_inset Formula $\xi_{XX}$
+\end_inset
+
+ and 
+\begin_inset Formula $\xi_{\Delta X}$
+\end_inset
+
+).
+ The values for alpha and beta are read from calibration files and should
+ 
+\bar under
+not
+\bar default
+ be changed manually.
+ In the right column, the user can define a proportional gain (
+\begin_inset Formula $G$
+\end_inset
+
+, typically 0.01-0.1) and constant values for each of the four load-clamp
+ parameters.
+ Note that all parameters are in SI units.
+ For example, a stiffness of 
+\begin_inset Formula $100$
+\end_inset
+
+ 
+\begin_inset Formula $\mu N\cdot m^{-1}$
+\end_inset
+
+ should be entered as 
+\begin_inset Formula $100E-6$
+\end_inset
+
+ 
+\begin_inset Formula $N\cdot m^{-1}$
+\end_inset
+
+.
+ 
+\series bold
+(D)
+\series default
+ To turn the clamp on, non-zero values must first be entered for the fiber's
+ stiffness and the proportional gain, and the user must ensure that the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Reinitialize
+\begin_inset Quotes erd
+\end_inset
+
+ toggle is ON (green).
+ If toggled on, the user can quickly turn the clamp on and off by simply
+ changing the proportional gain to respectively a non-zero value or zero.
+ The indicator on the right depicts the real-time value of the output voltage
+ (
+\begin_inset Formula $V_{O}$
+\end_inset
+
+) calculated by the real-time target.
+ This indicator will display 
+\begin_inset Formula $NaN$
+\end_inset
+
+ if the clamp is off, and it will instead display rapidly changing values
+ when the clamp is running.
+ 
+\series bold
+(E)
+\series default
+ Toggles on the left define whether the real-time target will implement
+ constant values for each of the load clamp parameters (if toggled OFF)
+ or waveforms generated by the host computer (if toggled ON; green).
+ The scaling factors on the right are read from the host computer (Fig.
+ 2E).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+III.
+ Protocol Setup and Implementation
+\end_layout
+
+\begin_layout Itemize
+Define the waveform type and waveform parameters for each of the load-clamp
+ parameters (Fig.
+ 2C).
+ Waveforms defined in IDLE mode will run when the software is running but
+ not recording.
+ Those in RUN mode will run only when the protocol is running and recording.
+ The mode can be changed in the upper-left panel of the software (Fig.
+ 2A).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Waveform type: Within the drop-down menu, select the type of waveform you
+ would like to deliver.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For pulses, you can select 
+\begin_inset Quotes eld
+\end_inset
+
+Pulse
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Ramped Pulse.
+\begin_inset Quotes erd
+\end_inset
+
+ By default, 
+\begin_inset Quotes eld
+\end_inset
+
+Ramped Pulse
+\begin_inset Quotes erd
+\end_inset
+
+ is preferred for compatibility with other scripts if an additional waveform
+ is to be added to the pulse (e.g.
+ a step with another step added to it, or a step with a sine wave).
+ 
+\end_layout
+
+\begin_layout Itemize
+You can also generate periodic signals via 
+\begin_inset Quotes eld
+\end_inset
+
+Sine,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Frequency Sweep,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Frequency Increment A,
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Frequency Increment B.
+\begin_inset Quotes erd
+\end_inset
+
+ The Sine waveform defines a sine wave of one amplitude and one frequency.
+ Frequency Sweep will generate a continuous frequency sweep between two
+ frequencies defined by the user.
+ Frequency Increment A and B allow a user to deliver a train of sine waves
+ with increments in respectively the frequency or amplitude of motion.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Misc: If the waveform type is Ramped Pulse, this will define the slope of
+ the ramp.
+ A value of zero corresponds to a step function.
+\end_layout
+
+\begin_layout Itemize
+Delay and Duration: Define the delay before the waveform and the duration
+ of the waveform.
+ The time after the waveform is defined by the Run Period (Fig.
+ 2A) minus the delay and duration.
+ For example, if the run period is 500 ms, the delay 100 ms, and the pulse
+ 300 ms, then the time after the pulse will be 100 ms.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For periodic signals, the 
+\begin_inset Quotes eld
+\end_inset
+
+cycles/duration
+\begin_inset Quotes erd
+\end_inset
+
+ entry defined the duration of the waveform, as opposed to the duration
+ entry used for other waveform types.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Frequency 1 and 2: For periodic signals, this defines the frequency range.
+ If only one frequency is required, the program will read the value in Frequency
+ 1.
+ For those waveform types that iterate or scan through frequency values,
+ the range will be defined by both entries.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that for waveforms that increment through values in amplitude or frequency,
+ the number of increments is defined by the number of waveforms in Fig.
+ 2B.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Amplitude 1 and 2: As with the frequency increments, this will define a
+ range of amplitude values through which to scan.
+ Again, the number of increments is defined in Fig.
+ 2B.
+\end_layout
+
+\begin_layout Itemize
+Amplitude Type: The increments in amplitude can be non-alternating, alternating,
+ or defined in an array.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Non-alternating: The amplitude range will iterate through amplitude values
+ from a minimum value to a maximum defined by the amplitude entries.
+\end_layout
+
+\begin_layout Itemize
+Alternating: The amplitudes will start at zero and increment symmetrically
+ to a maximum value defined by the amplitude entries.
+\end_layout
+
+\begin_layout Itemize
+Array: The user can manually define a number of amplitude values in an array
+ found below the virtual mass entry box.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If you wish to automatically scan through a number of parameter values,
+ such as would be done in the exploration of a hair bundle's state space,
+ input the ranges and number of increments in the 
+\begin_inset Quotes eld
+\end_inset
+
+Auto load clamp
+\begin_inset Quotes erd
+\end_inset
+
+ panel (Fig.
+ 2F).
+\end_layout
+
+\begin_layout Itemize
+As before, toggle ON the inputs you wish to record (Fig.
+ 2D).
+ 
+\end_layout
+
+\begin_layout Itemize
+Ensure that the scaling factors are compatible with the parameter ranges
+ you defined (Fig.
+ 2E).
+ Each scaling factor should be slightly more than one-tenth the maximum
+ absolute value of that load-clamp parameter.
+\end_layout
+
+\begin_layout Itemize
+If you would like to superimpose an additional stimulus waveform onto the
+ external force ramped pulse, toggle the 
+\begin_inset Quotes eld
+\end_inset
+
+Mod type
+\begin_inset Quotes erd
+\end_inset
+
+ in 
+\begin_inset Quotes eld
+\end_inset
+
+Wavetrain offsets, scaling and delays
+\begin_inset Quotes erd
+\end_inset
+
+ panel to 
+\begin_inset Quotes eld
+\end_inset
+
+State space
+\begin_inset Quotes erd
+\end_inset
+
+ (Fig.
+ 4B).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Within the same panel, define the amplitude value or range.
+\end_layout
+
+\begin_layout Itemize
+Below the four input displays for the load clamp parameters (Fig.
+ 4A), define the waveform type and properties in the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $F_{E}$
+\end_inset
+
+ stimulus
+\begin_inset Quotes erd
+\end_inset
+
+ panel (Fig.
+ 4C-D).
+ The waveform type and properties are defined in the same way as those in
+ Fig.
+ 2C.
+\end_layout
+
+\begin_layout Itemize
+Note that the pulse duration in Fig.
+ 2C will be automatically defined by the duration of the additional stimulus
+ generated here if 
+\begin_inset Quotes eld
+\end_inset
+
+State space
+\begin_inset Quotes erd
+\end_inset
+
+ is selected under 
+\begin_inset Quotes eld
+\end_inset
+
+Mod type
+\begin_inset Quotes erd
+\end_inset
+
+ (Fig.
+ 4B).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If desired, save your protocol in a configuration file (Fig.
+ 4E).
+ These configuration files include all entries in the Variable Load Clamp
+ software, and they can be loaded whenever the software is in IDLE mode
+ for ease of use.
+\end_layout
+
+\begin_layout Itemize
+Ensure that the load-clamp parameters for which you will generate waveforms
+ on the host computer are dynamically controlled on the real-time target
+ computer (Fig.
+ 3E).
+ For all other parameters, toggle the dynamic control off and set that value
+ to zero or some other value (Fig.
+ 3C).
+ Note that the load clamp will not control the load stiffness if the stiffness
+ value is equal to the fiber's stiffness.
+\end_layout
+
+\begin_layout Itemize
+Before running the protocol and after the image on the photodiode has been
+ centered, set the proportional gain on the load clamp to zero (Fig.
+ 3C) to turn the clamp off and start an alpha calibration (Fig.
+ 2E).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A new window will open, in which you must click RUN to start the calibration
+ protocol.
+ 
+\end_layout
+
+\begin_layout Itemize
+During this calibration a piezoelectric actuator, calibrated with a laser-dopple
+r interferometer, will displace a 
+\begin_inset Formula $45\textdegree$
+\end_inset
+
+ mirror to translate the image on the photodiode a known distance.
+ This is repeated for multiple steps and averages.
+ 
+\end_layout
+
+\begin_layout Itemize
+The slope of the relationship between the image's displacement and the photodiod
+e's voltage change corresponds to the alpha value.
+ 
+\end_layout
+
+\begin_layout Itemize
+An alpha whose absolute value is large corresponds to high contrast, and
+ one that is low to poor contrast.
+ This must be repeated prior to each run to ensure that the photodiode is
+ properly calibrated.
+\end_layout
+
+\begin_layout Itemize
+After the alpha calibration is completed, a window with a white background
+ will display the results.
+ The bottom panel displays the relationship between the image's position
+ and the photodiode's output, and a red line corresponds to a linear fit
+ between the two.
+ The scatterplot should be roughly linear and the slope of an order of magnitude
+ ranging from 
+\begin_inset Formula $10^{3}$
+\end_inset
+
+ (low contrast) to 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+ (high contrast).
+ 
+\end_layout
+
+\begin_layout Itemize
+If the relationship is not linear, repeat the alpha calibration.
+ It might be necessary to increase the number of repetitions (averages)
+ if the calibration is being attempted in the presence of a hair bundle's
+ spontaneous oscillations.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After the alpha calibration is complete, turn on the load clamp (set the
+ proportional gain to a nonzero value and re-initialize) (Fig.
+ 3C) and immediately start the protocol (Fig.
+ 2A).
+ 
+\end_layout
+
+\begin_layout Itemize
+At the end of the run, your results will be displayed.
+ Type whatever comments you would like and click 
+\begin_inset Quotes eld
+\end_inset
+
+Continue
+\begin_inset Quotes erd
+\end_inset
+
+ to save the log file (Fig.
+ 2A).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/joshsalvi/Documents/Lab/Lab/screencaps/fig4.eps
+	width 6in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+External force waveform generation and configuration files.
+ (A) 
+\series default
+Individual graphs depict the waveforms in each of the four load-clamp parameters
+ defined by the load clamp software.
+ As with the other inputs (Fig.
+ 2D), toggling the input to ON will both display and save that waveform.
+ 
+\series bold
+(B)
+\series default
+ To add an additional waveform to the ramped-pulse waveform in the external
+ force, toggle 
+\begin_inset Quotes eld
+\end_inset
+
+Mod type
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+State space.
+\begin_inset Quotes erd
+\end_inset
+
+ When toggled on, the pulse duration for each parameter (Fig.
+ 2C) will be automatically set to the duration defined by this additional
+ stimulus.
+ The user can then define the type of amplitude scaling (usually Alternating
+ or Non-Alternating) and the amplitude range in pN.
+ The panel labeled 
+\begin_inset Quotes eld
+\end_inset
+
+Frequency increments
+\begin_inset Quotes erd
+\end_inset
+
+ does 
+\bar under
+not
+\bar default
+ correspond to the number of frequency increments defined here and instead
+ corresponds to those defined for Frequency Increment A in Fig.
+ 2C.
+ 
+\series bold
+(C)
+\series default
+ Here the user can define the waveform type and waveform properties for
+ the additional stimulus.
+ The duration and number of waveforms will determine the total pulse duration
+ and will automatically be set for all four load-clamp parameters.
+ 
+\series bold
+(D) 
+\series default
+If the waveform type is Frequency Increment A, the user can define here
+ the number of frequency increments.
+ 
+\series bold
+(E)
+\series default
+ Here the user can save the configuration, which includes all entries (including
+ comments and additional waveforms) currently displayed in the software.
+ This option improves the ease of use in generating and modifying protocols.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+IV.
+ Troubleshooting
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Why does the load clamp lose stability? 
+\series default
+If stability is lost, be certain to 
+\bar under
+immediately
+\bar default
+ turn off the clamp by setting the proportional gain to zero on the real-time
+ target computer.
+ There are multiple reasons why the load clamp might go unstable.
+ Detailed below are possible causes and solutions.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The coupling between the glass stimulus fiber and the organelle to which
+ it is coupled is poor.
+ To circumvent this issue, employ clean stimulus fibers and coat the fibers
+ with concanavalin A or 
+\shape italic
+Datura stramonium
+\shape default
+ lectin prior to the experiment.
+ In many cases, lipids and other material will begin to stick to the fibers,
+ which will cause the strength of coupling to deteriorate.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You can saponify the lipids for removal by immersing the fiber in lye (NaOH)
+ and subsequently rinsing the fiber with distilled water.
+ The cleaning process might remove some of the gold-palladium on the fiber,
+ so be aware that you might need to sputter and characterize the probe after
+ 1-5 cleanings.
+ 
+\end_layout
+
+\begin_layout Itemize
+The concentration of concanavalin A or lectin must be titrated for a particular
+ application.
+ A high concentration will couple well to the tissue, but the fiber will
+ be more prone to sticking to other matter.
+ A low concentration will yield a fiber that is less prone to stick to other
+ matter, but it may couple less well to the target.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other sources produce noise that can be amplified by the load clamp.
+ Check all set screws, the sample and holder, and the micromanipulator for
+ any sources of vibration.
+ For example, a loose set screw will allow the stimulus fiber to move more
+ freely, which will cause the clamp to lose stability more readily.
+\end_layout
+
+\begin_layout Itemize
+The load clamp parameters are not optimal.
+ You can make multiple changes and preparations to avoid this.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In cases where you will only adjust the load stiffness and external force
+ applied to a bundle and when the fiber's drag coefficient is relatively
+ small 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Salvi:2015by,Salvi:2014MoH"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Salvi:2015by,Salvi:2014MoH"
+
+\end_inset
+
+, you need not include the fiber's drag coefficients.
+\end_layout
+
+\begin_layout Itemize
+Manually check the range of each parameter by toggling off dynamic control
+ of all parameters and subsequently iterating through different values of
+ each parameter.
+ For example, to determine the maximum load stiffness achievable by the
+ clamp in the current preparation, set the load stiffness value in Fig.
+ 3C to the fiber's stiffness and turn off the dynamic control of the load
+ stiffness.
+ Then, manually change the load stiffness value in Fig.
+ 3C in small increments, taking note of the fiber's positions.
+ When high-frequency oscillations of small amplitude begin to appear, the
+ clamp is nearing its stable limit.
+ Define a maximum stiffness value near this limit.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The analog low-pass filter might need to be adjusted.
+ The load clamp can achieve greater stability if the corner frequency on
+ the filter is reduced.
+ Try reducing the corner frequency, but be certain that the value is well
+ above the Nyquist frequency for your protocol and preparation.
+\end_layout
+
+\begin_layout Itemize
+There may be an issue of contrast with the photodiode or a mismatch between
+ calibration values and the actual contrast on the photodiode.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This can be remedied by repeating an alpha calibration.
+ In fact, this is one of the more common solutions to a clamp that goes
+ unstable, and this partially explains why the clamp might be stable for
+ a range of parameters one time but is then unstable another time for the
+ same fiber and preparation.
+\end_layout
+
+\begin_layout Itemize
+Assure that the LED light projected onto the photodiode is at its brightest.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other causes of load clamp instability have yet to be determined.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+The Variable Load Clamp software displays an 
+\begin_inset Quotes eld
+\end_inset
+
+MX Error
+\begin_inset Quotes erd
+\end_inset
+
+ or a clock error.
+ 
+\series default
+There are two common causes for these errors.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the case of a data acquisition error or 
+\begin_inset Quotes eld
+\end_inset
+
+MX
+\begin_inset Quotes erd
+\end_inset
+
+ error, the load clamp on the real-time target computer might not be running.
+ The target's software must be running 
+\series bold
+before
+\series default
+ the host computer's software can run.
+\end_layout
+
+\begin_layout Itemize
+A clock error occurs when there is a mismatch between the clocks on the
+ host and target computers.
+ To remedy this problem, restart the software on the real-time target computer.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+The software displays an 
+\begin_inset Quotes eld
+\end_inset
+
+Out of Memory
+\begin_inset Quotes erd
+\end_inset
+
+ error.
+
+\series default
+ This error arises when data remains stored in scripts within LabVIEW.
+ Typically, the memory is cleared at the completion of each run.
+ If the protocol is interrupted or the program stopped manually for whatever
+ reason (e.g.
+ the clamp loses stability), this memory will not be cleared.
+ To circumvent this issue, load a short protocol (e.g.
+ 10 ms), ensure that you are 
+\bar under
+not
+\bar default
+ saving the data, run the protocol, and click 
+\begin_inset Quotes eld
+\end_inset
+
+Continue
+\begin_inset Quotes erd
+\end_inset
+
+ (Fig.
+ 2A).
+ If you are monitoring the memory usage by LabVIEW, you should see this
+ value decline.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+The load clamp software will not open on the real-time target computer.
+
+\series default
+ This is most commonly caused by a lost connection between the host and
+ target computers.
+ You can check this by opening the National Instruments Automation Explorer
+ on the desktop and checking whether the real-time target (GreenRT) is connected.
+ If the connection is lost, close all LabVIEW software, turn off both computers,
+ and start them up again at the same time.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+The software attempts to generate a signal that is too long and outputs
+ an error.
+ 
+\series default
+This error occurs when a duration of zero is entered for the external stimulus
+ waveform (Fig.
+ 2C) and the computer subsequently attempts to divide by zero.
+ To remedy this issue, change the duration to a nonzero value.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+The waveform that should be superimposed onto the external stimulus pulse
+ does not appear.
+
+\series default
+ Follow all instructions in the previous section.
+ If the parameters are otherwise set correctly, ensure that the external
+ force waveform type in Fig.
+ 2C is set to 
+\begin_inset Quotes eld
+\end_inset
+
+Ramped Pulse.
+\begin_inset Quotes erd
+\end_inset
+
+ Any other waveform type is incompatible with these superimposed waveforms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+There is significant drift or change in contrast during an experiment.
+
+\series default
+ When centering the fiber's image on the photodiode, you will need to focus
+ the fiber by changing the objective's position and to adjust the position
+ of the photodiode box to center the signal.
+ Changes in either of these over time will lead to drift.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To reduce drift from the focus, lock the the objective's position.
+ This can be achieved by rotating a lever on the inner portion of the coarse
+ focus knob on the right.
+ You can also lock the x-y stage using levers on the right.
+\end_layout
+
+\begin_layout Itemize
+To reduce drift from motion of the photodiode box, reduce tension in the
+ set screws.
+ This can be achieved by rotating the screw past the center point (overshoot),
+ rotating it back and past the center point again (undershoot) and repeating
+ this process with sequentially smaller overshoots and undershoots until
+ the image rests at the photodiode's center.
+\end_layout
+
+\begin_layout Itemize
+If these techniques to not reduce drift, it is possible that the fiber is
+ not held tightly in the stimulus piezoelectric actuator or that the sample
+ itself is drifting.
+ To assess this, bring both the sample and the fiber into focus and lock
+ the objective.
+ Do the same for the stage.
+ Take a screenshot of the field of view, wait 3-5 minutes, and compare the
+ current field of view to the previously captured one.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the fiber has drifted, check that it is coupled tightly and no set screws
+ are loose.
+ 
+\end_layout
+
+\begin_layout Itemize
+If the tissue has drifted in the x- or y- directions, reseal the chamber
+ with vacuum grease or readjust the mounting pins.
+ If the tissue has drifted in the z-direction and the curvature of the tissue
+ in this direction has changed, then the tissue may (1) have not yet reached
+ an equilibrium position, (2) have begun to deteriorate, or (3) have been
+ poorly sealed.
+ Wait another 3-5 minutes and note whether the curvature has changed again
+ and whether there are any signs of cell death.
+ If the former is true, check the seal on the tissue.
+ If the latter is true, discard the tissue.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+The contrast on the photodiode is poor.
+
+\series default
+ Ensure that the analyzer has been removed from the field of view on the
+ microscope.
+ Check that the LED is at its maximum intensity (as indicated by the value
+ on the LED control box) and that the light passing through the sample is
+ at its brightest.
+ Finally, check that the condenser is at an optimal position to maximize
+ brightness.
+ If all of these parameters are optimal, then the tissue has likely degraded
+ and may need to be discarded if there are obvious signs of cell death.
+\end_layout
+
+\begin_layout Chapter*
+V.
+ Hardware and Software Shutdown
+\end_layout
+
+\begin_layout Itemize
+Center the photodiode stage such that the set screw achieves a value of
+ 2.5.
+\end_layout
+
+\begin_layout Itemize
+Rotate the DC offset on the piezoelectric actuator amplifiers counter-clockwise
+ to their minima.
+ Turn off the amplifiers after doing so.
+\end_layout
+
+\begin_layout Itemize
+Turn off all other necessary equipment:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Three power strips
+\end_layout
+
+\begin_layout Itemize
+Photodiode
+\end_layout
+
+\begin_layout Itemize
+LED control box (turn the key)
+\end_layout
+
+\begin_layout Itemize
+Light source (e.g.
+ halogen lamp or XCite lamp)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Return the analog filters to their default values:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{O}$
+\end_inset
+
+ filter (Kemo BM8, left side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Pul
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $V_{D}$
+\end_inset
+
+ filter (Kemo BM8, right side)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 kHz, normal setting (
+\begin_inset Quotes eld
+\end_inset
+
+Fla
+\begin_inset Quotes erd
+\end_inset
+
+, flat response to 
+\begin_inset Formula $f_{C}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Toggles at SE, DC, 1x gain, 1 (normal signal polarity)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Close all LabVIEW software.
+\end_layout
+
+\begin_layout Itemize
+Thoroughly clean objective, condenser, mirrors, and stage.
+\end_layout
+
+\begin_layout Itemize
+Remove any broken glass, pipettes, and reagents from the room.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/joshsalvi/Documents/20150707-papers"
+options "naturemag"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
